@@ -1,6 +1,7 @@
 /* app css stylesheet */
 @import '../../bower_components/font-awesome/css/font-awesome.css';
 @import '../../bower_components/bootstrap/dist/css/bootstrap.css';
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -28,6 +29,10 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+.search-bar{
+    padding-left: 10px !important;
 }
 
 .side-panel {
