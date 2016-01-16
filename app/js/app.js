@@ -13,14 +13,18 @@ angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.tpls', 'ui.boo
         $routeProvider.when('/partsandservice', {templateUrl: 'app/partials/parts-service.html', controller: 'PartsAndServiceCtrl'});
         $routeProvider.otherwise({redirectTo: '/home'});
     }])
-    .constant('CONFIGURL', 'https://chick-tech-cdk.firebaseio.com')
-    .factory('getVehiclesFirebaseStore', ['$firebase', 'CONFIGURL', function($firebase, CONFIGURL) {
+    .constant('CONFIGURL', 'https://resplendent-fire-8954.firebaseio.com')
+    .factory('getVehiclesFirebaseStore', ['$firebaseObject', 'CONFIGURL', function($firebaseObject, CONFIGURL) {
         var firebaseStore;
         return function(msg) {
             if(!firebaseStore) {
+                var firebaseStore = [];
                 var ref = new Firebase(CONFIGURL + '/Vehicles');
-                var sync = $firebase(ref);
-                firebaseStore = sync.$asArray();
+                for(var i=1;i<=31;i++) {
+                    var vehicle = $firebaseObject(ref.child(i));
+                    firebaseStore.push(vehicle);
+                }
+
             }
             return firebaseStore;
         };
