@@ -20,6 +20,7 @@ angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.tpls', 'ui.boo
             if(!firebaseStore) {
                 var firebaseStore = [];
                 var ref = new Firebase(CONFIGURL + '/Vehicles');
+                //there are 31 vehicle records in the database - not sure of a better way to do this
                 for(var i=1;i<=31;i++) {
                     var vehicle = $firebaseObject(ref.child(i));
                     firebaseStore.push(vehicle);
