@@ -5,12 +5,22 @@
             <img width="125" height="125" alt="" src="app/img/top4.png" class="">
         </div>
         <div class="col-lg-6" style="width: 85%;">
-            <h3>Please provide us with the information below and choose submtit.</h3>
+            <h3>Please provide us with the information below and choose submit.</h3>
             <div class="panel-body" style="width: 74%">
                 <div class="row">
                     <div class="form-group">
-                        <label>First Name</label><input name="total" ng-model="contactinfo.FirstName" class="form-control" ng-required>
+                        <label>First and Last Name *</label><input name="total" ng-model="contactinfo.Name" class="form-control" ng-required>
+                        <label>Phone Number *</label><input name="total" ng-model="contactinfo.PhoneNumber" class="form-control" ng-required>
+                        <label>E-mail</label><input name="total" ng-model="contactinfo.Email" class="form-control" ng-required placeholder="Email">
+                        <label>Comments*</label><textarea class="form-control" ng-model="contactinfo.Comments" rows="3"></textarea>
+                        <label>Birthdate</label><input name="total" ng-model="contactinfo.Birthdate" class="form-control" ng-required placeholder="mm/dd/yyyy">
+                        <label>Gender</label>
+                        <select>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
                     </div>
+                    <p>* Required field</p>
                 </div>
             </div>
         </div>
